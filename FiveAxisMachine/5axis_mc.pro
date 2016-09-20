@@ -1,5 +1,5 @@
 
-#Update from No thing change
+#Update from Change again 3 axis
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
