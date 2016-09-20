@@ -1,5 +1,5 @@
 
-#Update lam gi
+#Update Thay doi ne
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
