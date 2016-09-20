@@ -1,5 +1,5 @@
 
-#Update change chan vai
+#Update Haiz het chan
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
