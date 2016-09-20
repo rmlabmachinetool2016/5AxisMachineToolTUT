@@ -1,5 +1,5 @@
 
-#Update from 5 Axis Machine Computer
+#Update from 3 Axis
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
