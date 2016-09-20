@@ -1,0 +1,8 @@
+ctr+e + O   splite change
+ctr+k .......
+ctr + O
+F4
+Collapse	Ctrl+<
+Expand	Ctrl+>
+Ctrl+Shift+F	Open advanced find
+Ctr + tab
