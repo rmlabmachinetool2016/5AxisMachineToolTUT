@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MachineParameter>
+  <General>
+    <Xaxis Pole="90" Mass="5.33" Friction="50"/>
+    <Y1axis Pole="90" Mass="5.1" Friction="50"/>
+    <Y2axis Pole="90" Mass="5.1" Friction="50"/>
+    <Zaxis Pole="40" Mass="1.7" Friction="71.647"/>
+    <Caxis Pole="20" Mass="0.0023" Friction="0.022"/>
+    <A1axis Pole="20" Mass="0.01489" Friction="0.1"/>
+    <A2axis Pole="60" Mass="0.001489" Friction="0.1"/>
+    <Poles_of_ContouringControl PoleT="120" PoleN="120" PoleB="160" PoleI="120" PoleJ="120" PoleK="120"/>
+    <Poles_of_SyncronousControl SyncPoleY="60" SyncPoleA="160"/>
+  </General>
+  <Device>
+    <DAboard id="AIO000"/>
+    <Counterboard id="CNT000"/>
+  </Device>
+  <System>
+    <QT ver="5.5.0"/>
+    <xenomai ver="3.0-rc4"/>
+    <linuxkernel ver="3.18.12"/>
+  </System>
+  <Energy3Axis>
+    <Xaxis Mass="1" Viscous="1" Coulomb="3" Disturbance="8"/>
+    <Yaxis Mass="1" Viscous="1" Coulomb="7" Disturbance="8"/>
+    <Zaxis Mass="9" Viscous="10" Coulomb="11" Disturbance="12"/>
+  </Energy3Axis>
+  <Energy5Axis>
+    <Xaxis Mass="13" Viscous="14" Coulomb="15" Disturbance="20"/>
+    <Yaxis Mass="17" Viscous="18" Coulomb="19" Disturbance="20"/>
+    <Zaxis Mass="21" Viscous="22" Coulomb="23" Disturbance="24"/>
+  </Energy5Axis>
+</MachineParameter>
+<MotionParameter>
+  <General>
+    <modeselect param="Spline"/>
+    <SplineType param="Toolvel"/>
+    <MotionTime param="100"/>
+    <Loop param="200"/>
+    <TravelTime param="20000"/>
+  </General>
+  <Circle>
+    <t1 param="0.1"/>
+    <t2 param="0.2"/>
+    <t3 param="0.1"/>
+    <T param="0.3"/>
+    <R param="0.5"/>
+    <v2 param="0"/>
+  </Circle>
+  <Spline>
+    <t1 param="0.1"/>
+    <t2 param="0"/>
+    <t3 param="0.1"/>
+    <T param="2"/>
+    <a1 param="3.2"/>
+    <a2 param="-277.333"/>
+    <a3 param="4266.67"/>
+    <x0 param="0"/>
+    <x1 param="0.05"/>
+    <y0 param="0"/>
+    <y1 param="0"/>
+    <L param="0.126184"/>
+    <velopt param="0"/>
+    <v2 param="0"/>
+  </Spline>
+</MotionParameter>
+<DatalogOption>
+  <General>
+    <Xaxis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <Y1axis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <Y2axis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <Zaxis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <Caxis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <A1axis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+    <A2axis position="1" velocity="1" acceleration="1" force="1" error="1"/>
+  </General>
+  <Option/>
+  <Simulation>
+    <Graph1VelocityPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1VelocityResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1AccelerationPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1AccelerationResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1ForcePredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1ForceResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph1ErrorResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2VelocityPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2VelocityResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2AccelerationPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2AccelerationResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2ForcePredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2ForceResult Xaxis="1" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph2ErrorResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3VelocityPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3VelocityResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3AccelerationPredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3AccelerationResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3ForcePredict Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3ForceResult Xaxis="0" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+    <Graph3ErrorResult Xaxis="1" Y1axis="0" Y2axis="0" Zaxis="0" Caxis="0" A1axis="0" A2axis="0"/>
+  </Simulation>
+  <Simulation2>
+    <Datalog2Graph1Check 1="1" 2="1" 3="1" 4="1" 5="1" 6="0" 7="0"/>
+    <Datalog2Graph2Check 1="0" 2="0" 3="0" 4="0" 5="0" 6="0" 7="0"/>
+    <Datalog2Graph3Check 1="0" 2="0" 3="0" 4="0" 5="0" 6="0" 7="0"/>
+    <Datalog2Graph1Num 1="0" 2="0" 3="0" 4="0" 5="0" 6="0" 7="0"/>
+    <Datalog2Graph2Num 1="0" 2="0" 3="0" 4="0" 5="0" 6="0" 7="0"/>
+    <Datalog2Graph3Num 1="0" 2="0" 3="0" 4="0" 5="0" 6="0" 7="0"/>
+  </Simulation2>
+</DatalogOption>
+<Formstates>
+  <tab>
+    <Tabpage param="8"/>
+  </tab>
+</Formstates>
+<AdaptiveParameter>
+  <General>
+    <Xaxis L0="1" L1="1" L2="0" d="2" n="1" nb="0" nf="5" nd="2" m="1" nc="3" nr="2" np="4" nq="4" ns="2"/>
+    <Y1axis L0="1" L1="1" L2="0" d="1" n="2" nb="0" nf="5" nd="2" m="1" nc="3" nr="1" np="3" nq="4" ns="3"/>
+  </General>
+</AdaptiveParameter>

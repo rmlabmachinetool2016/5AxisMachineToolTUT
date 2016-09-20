@@ -1,5 +1,5 @@
 
-#Update Thay doi ne
+#Update from 5 Axis Machine Computer
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -7,7 +7,7 @@ DEFINES +=  DeviceReady=0
 #In the experiment, use expression template!!!!
 
 DEFINES += NDEBUG#enable expression template
-TARGET      = 5axis_MCDinhBa
+TARGET      = 5axis_MCBaOda
 
 TEMPLATE    = app
 CONFIG      += c++14
@@ -97,7 +97,7 @@ unix {
                         -Xlinker -rpath \
                         -Xlinker /usr/xenomai/lib
 
-#QMAKE_CXXFLAGS  +=  -I/home/threeaxiscnc/boost_1_61_0/
+QMAKE_CXXFLAGS  +=  -I/home/rnlab/boost_1_61_0/stage/include/
 #/media/threeaxiscnc/LINUX/5AxisCNCExperiment/Rmlab5AxisCNCSoft/Linux5AxisCNC
 
 QMAKE_CXXFLAGS  +=  -I/media/threeaxiscnc/LINUX/5AxisCNCExperiment/Rmlab5AxisCNCSoft/Linux5AxisCNC/boost_1_61_0/
@@ -116,7 +116,7 @@ windows::DEPENDPATH += D:\5AxisCNCExperiment\Rmlab5AxisCNCSoft\Linux5AxisCNC\boo
 
 #-L/home/rnlab/boost_1_61_0/stage/lib/\
 unix:LIBS +=  -L/media/threeaxiscnc/LINUX/5AxisCNCExperiment/Rmlab5AxisCNCSoft/Linux5AxisCNC/boost_1_61_0/
-#unix:LIBS +=  -L/home/threeaxiscnc/boost_1_61_0/\
+unix:LIBS +=  -L/home/rnlab/boost_1_61_0/stage/lib/
 unix:LIBS +=  -lboost_date_time
 QMAKE_CXXFLAGS+=  -O2
 #windows::DISTFILES += \
