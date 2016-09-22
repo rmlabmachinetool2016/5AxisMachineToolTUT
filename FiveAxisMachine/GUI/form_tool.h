@@ -25,7 +25,7 @@ public:
 
 
 private:
-    Ui::DesktopMachineToolSystem *myUi;
+    Ui::DesktopMachineToolSystem *myUi; // Create a representation of DesktopMachineToolSystem Ui
 
     std::vector<double> mGpara;
     std::vector<std::string> mDSpara;

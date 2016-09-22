@@ -23,7 +23,7 @@ MainSystem::MainSystem(QObject *parent):QObject(parent)
             ,SubController.get()
             ,SLOT(start()));
 
-    connect(SubController.get()
+    connect(SubController.get()   // Signal to update string in main window desktopmachinetoolsystem.Ui
             ,SIGNAL(Extextfunc(QString))
             ,w.get()
             ,SLOT(onValueChanged(QString)));
@@ -31,7 +31,7 @@ MainSystem::MainSystem(QObject *parent):QObject(parent)
     connect(SubController.get()
             ,SIGNAL(finished())
             ,this
-            ,SLOT(ThreadStop()));
+            ,SLOT(ThreadStop()));  // Connect finished simulation to Thread stop in Main System
 
     connect(w.get()
             ,SIGNAL(Th1Emit(bool))
@@ -53,7 +53,7 @@ MainSystem::MainSystem(QObject *parent):QObject(parent)
 
 
 
-    w->Th_main = SubThread.get();
+    w->Th_main = SubThread.get(); // Not using now
 
     xeno->xeno_var.mThreadPtr = SubController.get();
 
@@ -73,13 +73,13 @@ void MainSystem::ThreadStop(){
 
 }
 
-
+// Start thread for simulation or experimetn
 void MainSystem::ThreadStart(bool flug_per){
 
 
-    if(flug_per){
+    if(flug_per){ //run Experiment run
 
-        while(SubThread->isRunning()){
+        while(SubThread->isRunning()){    // Dont know meaning
             QCoreApplication::processEvents();
             QThread::sleep(0.3);
         }
@@ -93,7 +93,7 @@ void MainSystem::ThreadStart(bool flug_per){
 
     }
 
-    else{
+    else{   //run simulation run
 
         disconnect(SubThread.get()
                    ,SIGNAL(started())

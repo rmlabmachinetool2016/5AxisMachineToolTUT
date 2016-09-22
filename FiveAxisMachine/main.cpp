@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
     glutInit( & argc, argv );
     glutInitDisplayMode(GLUT_RGBA);
     QApplication a(argc, argv);
-    MainSystem MainSystem_;
-    (void)MainSystem_;
+    MainSystem MainSystem_;  // Init program and  destopmachinetoolsystem UI
+//    (void)MainSystem_;
 
     return a.exec();
     return 0;

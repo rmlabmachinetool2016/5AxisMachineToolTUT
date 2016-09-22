@@ -84,6 +84,32 @@ void DesktopMachineToolSystem::on_lineEdit_Loop_textChanged(const QString &arg1)
 
 void DesktopMachineToolSystem::on_pushButton_Start_clicked()
 {
+
+#if Ba5AxisTest == 1
+    // Before start ,should click ready to update changed parameter as controller gain, Select work Exp or Simul
+    ui->pushButton_Start->setStyleSheet("background-color: rgb(65, 65, 65)");
+
+    ui->pushButton_Start->setEnabled(false);
+    ui->pushButton_StopControl->setStyleSheet("background-color:red");
+
+    if (!(ui->radioButton_Experiment->isChecked()))SetParameter();  //update changed parameter as controller gain, Select work Exp or Simul
+
+    emit Th1Emit((ui->radioButton_Experiment->isChecked())); // Send siganl to Main System. Thread start
+
+    /*
+    if (ui->radioButton_Experiment->isChecked()){
+        while(Th_main->isRunning()){
+            QCoreApplication::processEvents();
+            QThread::sleep(0.3);
+        }
+        ui->textBrowser->append("start Experiment");
+        io.InitIOboard(0);
+    }*/
+#else
+
+
+
+
     ui->pushButton_Start->setStyleSheet("background-color: rgb(65, 65, 65)");
 
     ui->pushButton_Start->setEnabled(false);
@@ -102,7 +128,7 @@ void DesktopMachineToolSystem::on_pushButton_Start_clicked()
         ui->textBrowser->append("start Experiment");
         io.InitIOboard(0);
     }*/
-
+#endif
 }
 
 
@@ -188,7 +214,7 @@ void DesktopMachineToolSystem::on_pushButton_DataDump_clicked()
     ui->textBrowser->append("DataDump finished");
 }
 
-void DesktopMachineToolSystem::on_pushButton_simulation_clicked()
+void DesktopMachineToolSystem::on_pushButton_simulation_clicked() // Change to become drawgraph
 {
 
     double max_para,min_para,para;

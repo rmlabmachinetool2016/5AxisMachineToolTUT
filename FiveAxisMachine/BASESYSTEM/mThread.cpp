@@ -37,7 +37,7 @@ void mThread::start(){
     double calc_time;
     boost::timer b_timer;
 
-    if(selectWork==1){
+    if(selectWork==1){  // Simulation
         if(select_DOF==2){
 
             con2dSim->ControlSim2D(selectControl,max_step,EnableNoise,true);
@@ -56,7 +56,7 @@ void mThread::start(){
         emit finished();
     }
 
-    else if(selectWork==2){
+    else if(selectWork==2){ // Experiment
         bool TF;
         if(select_DOF==2){
             con2dExp->datalog=&datalog;

@@ -16,7 +16,7 @@ public:
 
     boost::shared_ptr<DesktopMachineToolSystem> w;
     boost::shared_ptr<mThread>  SubController;
-    boost::shared_ptr<QThread>  SubThread;
+    boost::shared_ptr<QThread>  SubThread;  // I dont know A SubThread from Qt
     boost::shared_ptr<xeno_system>  xeno;
 
     std::vector<double> *conparam;

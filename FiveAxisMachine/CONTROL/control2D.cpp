@@ -71,7 +71,7 @@ void control2dSim::ControlSim2D(unsigned int control_type_,
 						unsigned int max_step,
 						bool enable_noise,
                         bool enable_resolution
-                        )
+                        )    // Simulation 2 D control
 {
 
 control_type=control_type_;
@@ -1934,7 +1934,7 @@ void control2dExp::ControlAll(unsigned int step)
     rvel_c = coordi.rvel;
     racc_c = coordi.racc;
 
-    IOcda.GetStateVariable(time,posall,velall,accall);
+    IOcda.GetStateVariable(time,posall,velall,accall);  // IOcda is an io class
 
     posall_raw = posall;
     velall_raw = velall;
@@ -1965,7 +1965,7 @@ void control2dExp::ControlAll(unsigned int step)
     switch(control_type){
     case INDEPENDENT:
     case 3:
-        ICon(coordi,u1);
+        ICon(coordi,u1);  // Calculate
     break;
 
     case CONTOURING:

@@ -1,5 +1,5 @@
 
-#Update from Change again 3 axis
+#Update from Test Git Gui
 QT      +=  core gui opengl
 QT      +=  printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -135,7 +135,9 @@ DEPENDPATH += $$PWD/
 
 unix {
     DEFINES += basesystem=0
+    DEFINES += Ba5AxisTest=1
 }
 win32 {
     DEFINES += basesystem=1
+    DEFINES += Ba5AxisTest=1
 }

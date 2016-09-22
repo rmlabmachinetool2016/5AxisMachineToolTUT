@@ -10,8 +10,8 @@
 #include <iomanip>
 typedef boost::numeric::ublas::vector<double> bstvector;
 
-#define address 0xd060
-#define portDA 0xd040
+#define address 0xd060   // Address for CNT Board
+#define portDA 0xd040    // Address for DA Board
 
 linuxio::linuxio()
 {

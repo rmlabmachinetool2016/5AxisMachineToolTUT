@@ -10,7 +10,7 @@
 #include "CONTROL/XenoReady.h"
 
 #if basesystem == 0
-    RT_TASK xeno_task;
+    RT_TASK xeno_task;   // May be realtime task from xeno system
 #endif
 
 xeno_system::xeno_system(QObject *parent):QObject(parent)
@@ -22,7 +22,7 @@ void catch_signalb(int sig)
 {
 }
 
-void XenoCallBack(void *arg){
+void XenoCallBack(void *arg){ // This function may be call each time  xenomai_timer tick (0.2 ms)
 
     xeno_func* xeno_var = (xeno_func*)arg;
     xeno_var->stop = false;
@@ -35,15 +35,18 @@ void XenoCallBack(void *arg){
     rt_task_set_periodic(NULL, TM_NOW, sampling);
     previous = rt_timer_read();
 
-    sleep(0.5);
+    sleep(0.5);  // What does it mean
 
     while (1) {
-        rt_task_wait_period(NULL);
+        rt_task_wait_period(NULL);// Is this waiting for sampling time example 0.2 ms
         now = rt_timer_read();
 
         if(xeno_var->con2dExp->stepcount < xeno_var->con2dExp->max_step&&!(xeno_var->stop))
         {
-            (*xeno_var->con2dExp->datalog)(2,xeno_var->con2dExp->stepcount)=now;
+            (*xeno_var->con2dExp->datalog)(2,xeno_var->con2dExp->stepcount)=now;  // What does this function mean
+            // save real time now data to datalog
+
+
             if (1)
             {
                 xeno_var->con2dExp->ControlAll(xeno_var->con2dExp->stepcount);
@@ -67,7 +70,7 @@ void XenoCallBack(void *arg){
         else
         {
              linuxio io;
-             io.Init();
+             io.Init();  // Init mean reset CNT and DA board to origin state
              std::cout << "finished"<<std::endl;
              emit xeno_var->mThreadPtr->Extextfunc("finished");
              rt_task_delete(&xeno_task);
@@ -76,7 +79,7 @@ void XenoCallBack(void *arg){
 #endif
 }
 
-void xeno_system::Init(std::vector<double> *conparam
+void xeno_system::Init(std::vector<double> *conparam  // Setting control parameter for con2dExp, con3dExp
                        ,std::vector<double> *conparam2){
 
 
@@ -114,7 +117,7 @@ void xeno_system::Init(std::vector<double> *conparam
 
 }
 
-void xeno_system::start(){
+void xeno_system::start(){  // Start Xeno_system for experiment
 #if basesystem == 0
     io.Init();
     signal(SIGTERM, catch_signalb);
@@ -122,6 +125,6 @@ void xeno_system::start(){
     mlockall(MCL_CURRENT|MCL_FUTURE);
     rt_task_create(&xeno_task, "RTthread", 0, 99, 0);//prio 99
     std::cout<<"setting"<<std::endl;
-    rt_task_start(&xeno_task, &XenoCallBack, &xeno_var);
+    rt_task_start(&xeno_task, &XenoCallBack, &xeno_var); // Run with   xeno_task for thread
 #endif
 }
